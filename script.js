@@ -1,41 +1,47 @@
-let jawaban = '', soal = ''
+const jawaban = '', soal = ''
 $(document).ready(() => {
-    $('.btn').click(() => {
+    $('.submit').click(() => {
         jawaban = $('jawaban').val()
         soal = $('soal').val()
         switch (soal) {
             case 'm1':
-                if (jawaban === "") {
-
+                if (jawaban === "TAKJIL") {
+                    alert('BENER')
                 } else {
 
                 }
             case 'd2':
-                if (jawaban === "") {
+                if (jawaban === "TARAWEH") {
+
+                } else {
+
+                }
+            case 'm2':
+                if (jawaban === "TADARUS") {
 
                 } else {
 
                 }
             case 'm3':
-                if (jawaban === "") {
+                if (jawaban === "EIDALFITR") {
 
                 } else {
 
                 }
             case 'd4':
-                if (jawaban === "") {
+                if (jawaban === "RAMADAN") {
 
                 } else {
 
                 }
             case 'd5':
-                if (jawaban === "") {
+                if (jawaban === "HAUS") {
 
                 } else {
 
                 }
             case 'd6':
-                if (jawaban === "") {
+                if (jawaban === "SAHUR") {
 
                 } else {
 
