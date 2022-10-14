@@ -46,8 +46,6 @@ $(document).ready(() => {
                 } else {
 
                 }
-            default:
-                break;
         }
     })
 })
