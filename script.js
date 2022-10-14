@@ -8,7 +8,7 @@ $(document).ready(() => {
                 if (jawaban === "TAKJIL") {
                     alert('BENER')
                 } else {
-
+                    alert('SALAH')
                 }
             case 'd2':
                 if (jawaban === "TARAWEH") {
@@ -46,6 +46,8 @@ $(document).ready(() => {
                 } else {
 
                 }
+            default:
+                break;
         }
     })
 })
