@@ -1,51 +1,87 @@
-const jawaban = '', soal = ''
+let soal = '', jawaban = '';
+
+function jawabBenar(selectedSoal, editClass) {
+    $(editClass).attr('style', 'color:black')
+    $("#select-soal option[value='" + selectedSoal + "']").attr("disabled", "true").addClass('bg-secondary text-white')
+    $("#select-soal").prop('selectedIndex', 0)
+    $('#jawaban').val('')
+    alert('Jawaban Benar!')
+}
+
+function jawabSalah() {
+    alert('Jawaban Salah!')
+}
+
 $(document).ready(() => {
-    $('.submit').click(() => {
-        jawaban = $('jawaban').val()
-        soal = $('soal').val()
+    // $(document).bind("contextmenu",function(e){
+    //     return false;
+    // });
+
+    // Submit Checking
+    $('.btn').click(() => {
+        soal = $('#select-soal').val()
+        jawaban = $('#jawaban').val().toUpperCase()
+        console.log(soal, jawaban);
         switch (soal) {
-            case 'm1':
+            case 'soal-1':
                 if (jawaban === "TAKJIL") {
-                    alert('BENER')
+                    jawabBenar('soal-1', '.huruf-1')
                 } else {
-                    alert('SALAH')
+                    jawabSalah()
                 }
-            case 'd2':
-                if (jawaban === "TARAWEH") {
+                break;
 
-                } else {
-
-                }
-            case 'm2':
+            case 'soal-2-me':
                 if (jawaban === "TADARUS") {
-
+                    jawabBenar('soal-2-me', '.huruf-2-me')
                 } else {
-
+                    jawabSalah()
                 }
-            case 'm3':
+                break;
+
+            case 'soal-2-md':
+                if (jawaban === "TARAWEH" || jawaban === "TERAWEH") {
+                    jawabBenar('soal-2-md', '.huruf-2-md')
+                } else {
+                    jawabSalah()
+                }
+                break;
+
+            case 'soal-3':
                 if (jawaban === "EIDALFITR") {
-
+                    jawabBenar('soal-3', '.huruf-3')
                 } else {
-
+                    jawabSalah()
                 }
-            case 'd4':
-                if (jawaban === "RAMADAN") {
+                break;
 
+            case 'soal-4':
+                if (jawaban === "RAMADHAN" || jawaban === "RAMADAN") {
+                    jawabBenar('soal-4', '.huruf-4')
                 } else {
-
+                    jawabSalah()
                 }
-            case 'd5':
+                break;
+
+            case 'soal-5':
                 if (jawaban === "HAUS") {
-
+                    jawabBenar('soal-5', '.huruf-5')
                 } else {
-
+                    jawabSalah()
                 }
-            case 'd6':
+                break;
+
+            case 'soal-6':
                 if (jawaban === "SAHUR") {
-
+                    jawabBenar('soal-6', '.huruf-6')
                 } else {
-
+                    jawabSalah()
                 }
+                break;
+
+            default:
+                alert("Silahkan pilih soal dan masukan jawaban")
+                break;
         }
     })
 })
